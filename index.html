@@ -5,9 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="styles/reset.css" />
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" /> -->
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   <title>Weather Dashboard</title>
 </head>
 
@@ -38,20 +38,41 @@
           </div>
         </form>
         <div class="list-group" id="history"></div>
+        <button type="submit" class="btn search-button" id="history-button" aria-label="submit search">
+          history
       </aside>
 
       <div class="col-lg-9 pb-3">
         <section id="today" class="mt-3" role="region" aria-live="polite"></section>
-        <section id="forecast" class="row mt-3" role="region" aria-live="polite"></section>
-      </div>
-    </div>
-  </div>
+        <div>
+          <h4>Todays's Weather:</h4>
+          <div id="dayOne" class="row weatherblock">
+            <div class="row column">
+              <h5>City:</h5>
+              <h5>Date:</h5>
+              <h5>Temperature:</h5>
+              <h5>Humidity:</h5>
+              <h5>Wind:</h5>
+            </div>
+            <div class="row column">
+              <h5>London</h5>
+              <h5>17/12/2022</h5>
+              <h5>-1</h5>
+              <h5>15</h5>
+              <h5>1.5 knots</h5>
+            </div>
+          </div>
+          <section id="forecast" class="row mt-3" role="region" aria-live="polite"></section>
+          <div class="row">
+            <div id="forecastSection" class="row">
+            </div>
+          </div>
 
-  <!-- Moment.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-  <!-- jQuery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="script.js"></script>
+          <!-- Moment.js -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+          <!-- jQuery -->
+          <script src="https://code.jquery.com/jquery-3.6.2.min.js"></script>
+          <script src="./js/logic.js"></script>
 </body>
 
 </html>
