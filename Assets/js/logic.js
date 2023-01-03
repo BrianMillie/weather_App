@@ -11,7 +11,11 @@ var iconEnd = '@2x.png'
 function displayMatches(matches) {
   otherDays.html('');
   console.log(matches)
+  var i = 0
   for (var matchObj of matches) {
+    i = i + 4
+    var currentDayMoment = moment().add(i, 'hours').format('Do MMM YYYY, hh A');
+    console.log(currentDayMoment)
     console.log(matchObj.main.temp - 273.5)
     otherDays.append(`
     <div class="row weatherblock" style="background-image: url(${iconUrl + matchObj.weather[0].icon + iconEnd}">
@@ -24,7 +28,7 @@ function displayMatches(matches) {
       </div>
       <div class="row column">
         <h7>${searchText}</h7>
-        <h7>17/12/2022</h7>
+        <h7>${currentDayMoment}</h7>
         <h7>${Math.round(matchObj.main.temp - 273.5)}</h7>
         <h7>${matchObj.main.humidity}</h7>
         <h7>${matchObj.wind.speed}</h7>
@@ -39,6 +43,7 @@ function getWeatherData(event) {
   if (searchText) {
     $.get(`https://api.openweathermap.org/data/2.5/weather?q=${searchText}&appid=${apiKey}&units=metric`)
       .then(function (currentData) {
+
         $.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${currentData.coord.lat}&lon=${currentData.coord.lon}&appid=${apiKey}`)
           .then(function (forecastData) {
             var listings = (forecastData.list)

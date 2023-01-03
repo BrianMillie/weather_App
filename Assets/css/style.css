@@ -1,0 +1,19 @@
+.row {
+    display: flex;
+    margin-left: 0.5px !important;
+    margin-right: 0.5px !important;
+    margin-bottom: 1px !important;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.weatherblock {
+    border-width: 0.5px;
+    border-style: double;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    font-weight: lighter;
+    background-color: #343a40;
+    color: white
+}
